@@ -5,44 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Como Ter Sucesso na Vida Profissional</title>
   <style>
+    :root {
+      --primary: #004aad;
+      --secondary: #ff9800;
+      --gradient: linear-gradient(135deg, #004aad, #0077ff);
+    }
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      line-height: 1.6;
+      font-family: 'Segoe UI', Arial, sans-serif;
       color: #333;
+      background: #f5f7fa;
     }
     header {
-      background: #004aad;
+      background: var(--gradient);
       color: #fff;
-      padding: 40px 20px;
       text-align: center;
+      padding: 80px 20px;
+      animation: fadeIn 1.5s ease-in-out;
     }
     header h1 {
+      font-size: 3em;
       margin: 0;
-      font-size: 2.5em;
     }
     header p {
-      font-size: 1.2em;
-      margin-top: 10px;
+      font-size: 1.3em;
+      margin-top: 15px;
     }
     .cta-button {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #ff9800;
+      margin-top: 25px;
+      padding: 14px 30px;
+      background: var(--secondary);
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      border-radius: 5px;
+      border-radius: 30px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+      background: #e68900;
     }
     section {
-      padding: 40px 20px;
-      max-width: 900px;
+      padding: 60px 20px;
+      max-width: 1100px;
       margin: auto;
+      animation: fadeUp 1.2s ease-in-out;
     }
     section h2 {
-      color: #004aad;
+      color: var(--primary);
       margin-bottom: 20px;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
     }
     ul {
       list-style: none;
@@ -50,28 +78,39 @@
     }
     ul li {
       margin-bottom: 10px;
-      padding-left: 20px;
+      padding-left: 25px;
       position: relative;
     }
     ul li::before {
       content: "✔";
       position: absolute;
       left: 0;
-      color: #004aad;
+      color: var(--primary);
     }
     .testimonial {
       font-style: italic;
-      background: #f9f9f9;
-      padding: 20px;
-      border-left: 4px solid #004aad;
-      margin: 20px 0;
+      background: #fff;
+      padding: 25px;
+      border-left: 5px solid var(--primary);
+      margin: 30px auto;
+      max-width: 700px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     footer {
-      background: #004aad;
+      background: var(--gradient);
       color: #fff;
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       margin-top: 40px;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes fadeUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
     }
   </style>
 </head>
@@ -85,42 +124,50 @@
 
   <section>
     <h2>Estrutura do Livro</h2>
-    <h3>Parte I – Fundamentos do Sucesso Profissional</h3>
-    <ul>
-      <li>Redefinindo o sucesso: além do salário, propósito e impacto.</li>
-      <li>Autoconhecimento como base da trajetória.</li>
-      <li>Mentalidade de crescimento e resiliência.</li>
-    </ul>
-
-    <h3>Parte II – Construindo Sua Trajetória</h3>
-    <ul>
-      <li>Planejamento estratégico da carreira.</li>
-      <li>Educação contínua e desenvolvimento.</li>
-      <li>Portfólio de habilidades: hard e soft skills.</li>
-    </ul>
-
-    <h3>Parte III – Destacando-se no Mercado</h3>
-    <ul>
-      <li>Marca pessoal e visibilidade digital.</li>
-      <li>Networking inteligente e genuíno.</li>
-      <li>Comunicação eficaz no ambiente profissional.</li>
-    </ul>
-
-    <h3>Parte IV – Excelência na Execução</h3>
-    <ul>
-      <li>Produtividade e gestão do tempo.</li>
-      <li>Energia e disposição como diferencial.</li>
-    </ul>
+    <div class="grid">
+      <div class="card">
+        <h3>Parte I – Fundamentos</h3>
+        <ul>
+          <li>Redefinindo o sucesso</li>
+          <li>Autoconhecimento</li>
+          <li>Mentalidade de crescimento</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Parte II – Trajetória</h3>
+        <ul>
+          <li>Planejamento estratégico</li>
+          <li>Educação contínua</li>
+          <li>Portfólio de habilidades</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Parte III – Mercado</h3>
+        <ul>
+          <li>Marca pessoal</li>
+          <li>Networking inteligente</li>
+          <li>Comunicação eficaz</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Parte IV – Execução</h3>
+        <ul>
+          <li>Produtividade</li>
+          <li>Gestão do tempo</li>
+          <li>Energia e disposição</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section>
     <h2>Diferenciais do Livro</h2>
-    <ul>
-      <li>Exercícios práticos para aplicar imediatamente.</li>
-      <li>Exemplos reais e ferramentas de autoavaliação.</li>
-      <li>Estratégias modernas para o mercado atual.</li>
-      <li>Equilíbrio entre teoria e prática.</li>
-    </ul>
+    <div class="grid">
+      <div class="card"><p>Exercícios práticos para aplicar imediatamente.</p></div>
+      <div class="card"><p>Exemplos reais e ferramentas de autoavaliação.</p></div>
+      <div class="card"><p>Estratégias modernas para o mercado atual.</p></div>
+      <div class="card"><p>Equilíbrio entre teoria e prática.</p></div>
+    </div>
   </section>
 
   <section>
